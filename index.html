@@ -155,14 +155,44 @@
         `;
       }
     }
+    
 
-    function showAnswer(text) {
-      question.innerHTML = '💌 Final Answer';
-      options.innerHTML = `
-        <p style="font-size:1.2rem; color:#ff4fa3; margin-bottom:20px;">${text}</p>
-        <button class="option-btn" onclick="location.reload()">🔄 Start Again</button>
-      `;
+    function showAnswer(text, previousFunction = null) {
+  question.innerHTML = '💌';
+
+  options.innerHTML = `
+    <p style="
+      font-size:1.2rem;
+      color:#ff4fa3;
+      margin-bottom:20px;
+      line-height:1.6;
+    ">
+      ${text}
+    </p>
+
+    <div style="display:flex; gap:10px; justify-content:center;">
+
+      ${
+        previousFunction
+        ? `<button class="option-btn"
+            style="width:45%;"
+            onclick="${previousFunction}()">
+            ⬅ Previous
+           </button>`
+        : ''
+      }
+
+      <button class="option-btn"
+        style="width:45%;"
+        onclick="location.reload()">
+        🏠 Home
+      </button>
+
+    </div>
+  `;
     }
+
+    
 // Cute floating sparkles
     for(let i = 0; i < 25; i++) {
   const sparkle = document.createElement('div');
