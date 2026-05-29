@@ -1,26 +1,117 @@
-animation: float 8s infinite linear;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device width, initial-scale=1.0" />
+  <title>Birthday Surprise Flow</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-@keyframes float {
-  from {
-    transform: translateY(100vh) scale(0.5);
-  }
-  to {
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd6e8, #d6f6ff, #fce1ff);
+      overflow: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+    }
+
+    h1 {
+      color: #ff69b4;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 25px;
+      font-size: 1rem;
+    }
+
+    .option-btn {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px;
+      border: none;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #ffc8dd, #cdb4db);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .option-btn:hover {
+      transform: scale(1.04);
+      background: linear-gradient(135deg, #bde0fe, #a2d2ff);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.6
+      animation: float 8s infinite linear;
+      }
+      @keyframes float { 
+        from {
+        transform: translateY(100vh) scale(0.5);
+        }
+        to {
     transform: translateY(-100vh) scale(1.2);
+    }
   }
-}
-
   </style>
 </head>
-<body>  <div class="container" id="quizBox">
+<body> 
+  <div class="container" id="quizBox">
     <h1>🎂 Birthday Surprise 🎂</h1>
-    <p id="question">Hey Birthday Boy 💖<br>Choose a path to unlock your surprise ✨</p><div id="options">
-  <button class="option-btn" onclick="nextStep('music')">🎁 Open Gift Box</button>
-  <button class="option-btn" onclick="nextStep('movie')">🍰 Cut the Cake</button>
-  <button class="option-btn" onclick="nextStep('study')">💌 Read Secret Message</button>
-</div>
-
-  </div>  <script>
+    <p id="question">Hey Birthday Boy 💗<br>Choose a path to unlock your surprise ✨</p>
+    
+    <div id="options">
+    <button class="option-btn" onclick="nextStep('music')">🎁 Open Gift Box</button>
+    <button class="option-btn" onclick="nextStep('movie')">🍰 Cut the Cake</button>
+    <button class="option-btn" onclick="nextStep('study')">💌 Read Secret Message</button>
+    </div>
+  </div>
+  
+  <script>
     const question = document.getElementById('question');
     const options = document.getElementById('options');
 
@@ -33,6 +124,8 @@ animation: float 8s infinite linear;
         `;
       }
 
+
+        
       else if(choice === 'movie') {
         question.innerHTML = '🍰 Pick your birthday cake flavor';
         options.innerHTML = `
@@ -41,6 +134,7 @@ animation: float 8s infinite linear;
         `;
       }
 
+        
       else if(choice === 'study') {
         question.innerHTML = '💌 Ready for your secret message?';
         options.innerHTML = `
@@ -57,4 +151,17 @@ animation: float 8s infinite linear;
         <button class="option-btn" onclick="location.reload()">🔄 Start Again</button>
       `;
     }
+// Cute floating sparkles
+    for(let i = 0; i < 20; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.animationDuration = (5 + Math.random() * 5) + 's';
+      sparkle.style.opacity = Math.random();
+      document.body.appendChild(sparkle);
+    }
+  </script>
+
+</body>
+</html>
 
