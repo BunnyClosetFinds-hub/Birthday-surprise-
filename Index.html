@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,106 +10,112 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-    }body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #ffd6e8, #d6f6ff, #fce1ff);
-  overflow: hidden;
-}
+    }
 
-.container {
-  width: 90%;
-  max-width: 500px;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  text-align: center;
-  animation: fadeIn 0.6s ease;
-}
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd6e8, #d6f6ff, #fce1ff);
+      overflow: hidden;
+    }
 
-h1 {
-  color: #ff69b4;
-  margin-bottom: 15px;
-  font-size: 2rem;
-}
+    .container {
+      width: 90%;
+      max-width: 500px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+    }
 
-p {
-  color: #555;
-  margin-bottom: 25px;
-  font-size: 1rem;
-}
+    h1 {
+      color: #ff69b4;
+      margin-bottom: 15px;
+      font-size: 2rem;
+          }
 
-.option-btn {
-  display: block;
-  width: 100%;
-  margin: 12px 0;
-  padding: 14px;
-  border: none;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #ffc8dd, #cdb4db);
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
+    p {
+      color: #555;
+      margin-bottom: 25px;
+      font-size: 1rem;
+    }
 
-.option-btn:hover {
-  transform: scale(1.04);
-  background: linear-gradient(135deg, #bde0fe, #a2d2ff);
-}
+    .option-btn {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px;
+      border: none;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #ffc8dd, #cdb4db);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
 
-.hidden {
-  display: none;
-}
+    .option-btn:hover {
+      transform: scale(1.04);
+      background: linear-gradient(135deg, #bde0fe, #a2d2ff);
+    }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    .hidden {
+      display: none;
+    }
 
-.sparkle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.6;
-  animation: float 8s infinite linear;
-}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-@keyframes float {
-  from {
-    transform: translateY(100vh) scale(0.5);
-  }
-  to {
-    transform: translateY(-100vh) scale(1.2);
-  }
-}
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 8s infinite linear;
+    }
 
+    @keyframes float {
+      from {
+        transform: translateY(100vh) scale(0.5);
+      }
+      to {
+        transform: translateY(-100vh) scale(1.2);
+      }
+    }
   </style>
 </head>
-<body>  <div class="container" id="quizBox">
+<body>
+
+  <div class="container" id="quizBox">
     <h1>Made just for you 💖</h1>
     <p style="font-size:0.9rem; color:#aa6c7d; margin-top:-10px;">Tap a card to open your surprise ✨</p>
-    <p id="question">Hey Birthday Boy 💖<br>Choose a path to unlock your surprise ✨</p><div id="options" style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
-  <button class="option-btn" style="height:120px; font-size:1.1rem;" onclick="nextStep('music')">📸<br>Memories</button>
-  <button class="option-btn" style="height:120px; font-size:1.1rem;" onclick="nextStep('movie')">💌<br>Letters</button>
-  <button class="option-btn" style="height:120px; font-size:1.1rem;" onclick="nextStep('study')">🎀<br>Secrets</button>
-  <button class="option-btn" style="height:120px; font-size:1.1rem;" onclick="nextStep('decision')">🌸<br>Decisions</button>
-</div>
+    <p id="question">Hey Birthday Boy 💖<br>Choose a path to unlock your surprise ✨</p>
 
-  </div>  <script>
+    <div id="options" style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+      <button class="option-btn" style="height:120px; font-size:1.1rem;" onclick="nextStep('music')">📸<br>Memories</button>
+      <button class="option-btn" style="height:120px; font-size:1.1rem;" onclick="nextStep('movie')">💌<br>Letters</button>
+      <button class="option-btn" style="height:120px; font-size:1.1rem;" onclick="nextStep('study')">🎀<br>Secrets</button>
+      <button class="option-btn" style="height:120px; font-size:1.1rem;" onclick="nextStep('decision')">🌸<br>Decisions</button>
+    </div>
+  </div>
+
+  <script>
     const question = document.getElementById('question');
     const options = document.getElementById('options');
 
@@ -137,7 +144,6 @@ p {
         `;
       }
     }
-
     function showAnswer(text) {
       question.innerHTML = '💌 Final Answer';
       options.innerHTML = `
@@ -155,5 +161,27 @@ p {
       sparkle.style.opacity = Math.random();
       document.body.appendChild(sparkle);
     }
-  </script></body>
+  </script>
+
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    }
